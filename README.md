@@ -2,30 +2,30 @@
 
 [![.NET](https://img.shields.io/badge/.NET_8-512BD4?style=flat&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/) [![EF Core](https://img.shields.io/badge/EF_Core-512BD4?style=flat&logo=dotnet&logoColor=white)](https://learn.microsoft.com/en-us/ef/core/) [![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=flat&logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server) [![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=flat&logo=swagger&logoColor=black)](https://swagger.io/)
 
-A study project built with ASP.NET Core to practice the fundamentals of REST APIs, database integration, and Entity Framework Core.
+Um projeto de estudo construído com ASP.NET Core para praticar os fundamentos de APIs REST, integração com banco de dados e Entity Framework Core.
 
-## Overview
+## Visão Geral
 
-WebApi8 is a Book & Author management API, built to consolidate core backend concepts using the .NET ecosystem:
+WebApi8 é uma API de gerenciamento de Livros e Autores, criada para consolidar conceitos essenciais de backend usando o ecossistema .NET:
 
-- A REST API developed with C# and .NET 8
-- A one-to-many relationship between Authors and Books (one author can have several books)
-- Data persistence with Entity Framework Core and SQL Server
-- A standardized response wrapper (`ResponseModel<T>`) returned by every endpoint
-- Interactive documentation via Swagger / Swashbuckle
+- Uma API REST desenvolvida com C# e .NET 8
+- Um relacionamento um-para-muitos entre Autores e Livros (um autor pode ter vários livros)
+- Persistência de dados com Entity Framework Core e SQL Server
+- Um wrapper de resposta padronizado (`ResponseModel<T>`) retornado por todos os endpoints
+- Documentação interativa via Swagger / Swashbuckle
 
 ### Stack
 
-| Layer          | Technology                 |
+| Camada         | Tecnologia                  |
 | -------------- | --------------------------- |
 | API            | C# / .NET 8 / ASP.NET Core  |
 | ORM            | Entity Framework Core       |
-| Database       | SQL Server                  |
-| Documentation  | Swagger / Swashbuckle       |
+| Banco de Dados | SQL Server                  |
+| Documentação   | Swagger / Swashbuckle       |
 
-### Standard Response Format
+### Formato Padrão de Resposta
 
-Every endpoint returns data wrapped in a consistent shape:
+Todo endpoint retorna os dados envolvidos em um formato consistente:
 
 ```json
 {
@@ -35,31 +35,31 @@ Every endpoint returns data wrapped in a consistent shape:
 }
 ```
 
-### API Endpoints
+### Endpoints da API
 
-#### Books (`/api/Livro`)
+#### Livros (`/api/Livro`)
 
-| Method   | Route                                    | Description                       |
+| Método   | Rota                                      | Descrição                          |
 | -------- | ----------------------------------------- | ---------------------------------- |
-| `GET`    | /api/Livro/ListarLivros                   | Lists all books                    |
-| `GET`    | /api/Livro/BuscarLivroPorId/{idLivro}     | Gets a book by ID                  |
-| `GET`    | /api/Livro/BuscarLivroPorIdAutor/{idAutor}| Gets a book by author ID           |
-| `POST`   | /api/Livro/CriarLivro                     | Creates a new book                 |
-| `PUT`    | /api/Livro/EditarLivro                    | Updates an existing book           |
-| `DELETE` | /api/Livro/ExcluirLivro?idLivro={id}      | Deletes a book                     |
+| `GET`    | /api/Livro/ListarLivros                   | Lista todos os livros              |
+| `GET`    | /api/Livro/BuscarLivroPorId/{idLivro}     | Busca um livro pelo ID             |
+| `GET`    | /api/Livro/BuscarLivroPorIdAutor/{idAutor}| Busca um livro pelo ID do autor    |
+| `POST`   | /api/Livro/CriarLivro                     | Cria um novo livro                 |
+| `PUT`    | /api/Livro/EditarLivro                    | Atualiza um livro existente        |
+| `DELETE` | /api/Livro/ExcluirLivro?idLivro={id}      | Exclui um livro                    |
 
-#### Authors (`/api/Autor`)
+#### Autores (`/api/Autor`)
 
-| Method   | Route                                      | Description                     |
+| Método   | Rota                                         | Descrição                         |
 | -------- | -------------------------------------------- | --------------------------------- |
-| `GET`    | /api/Autor/ListarAutores                     | Lists all authors                |
-| `GET`    | /api/Autor/BuscarAutorPorId/{idAutor}        | Gets an author by ID              |
-| `GET`    | /api/Autor/BuscarAutorPorIdLivro/{idLivro}   | Gets the author of a given book   |
-| `POST`   | /api/Autor/CriarAutor                        | Creates a new author              |
-| `PUT`    | /api/Autor/EditarAutor                       | Updates an existing author        |
-| `DELETE` | /api/Autor/ExcluirAutor?idAutor={id}         | Deletes an author                 |
+| `GET`    | /api/Autor/ListarAutores                     | Lista todos os autores            |
+| `GET`    | /api/Autor/BuscarAutorPorId/{idAutor}        | Busca um autor pelo ID            |
+| `GET`    | /api/Autor/BuscarAutorPorIdLivro/{idLivro}   | Busca o autor de um determinado livro |
+| `POST`   | /api/Autor/CriarAutor                        | Cria um novo autor                |
+| `PUT`    | /api/Autor/EditarAutor                       | Atualiza um autor existente       |
+| `DELETE` | /api/Autor/ExcluirAutor?idAutor={id}         | Exclui um autor                   |
 
-### Example Payload — POST /api/Autor/CriarAutor
+### Exemplo de Payload — POST /api/Autor/CriarAutor
 
 ```json
 {
@@ -68,7 +68,7 @@ Every endpoint returns data wrapped in a consistent shape:
 }
 ```
 
-### Example Payload — POST /api/Livro/CriarLivro
+### Exemplo de Payload — POST /api/Livro/CriarLivro
 
 ```json
 {
@@ -83,15 +83,15 @@ Every endpoint returns data wrapped in a consistent shape:
 
 ---
 
-## Running Locally
+## Executando Localmente
 
-### Prerequisites
+### Pré-requisitos
 
 - .NET 8 SDK
-- SQL Server (local or remote instance)
+- SQL Server (instância local ou remota)
 - Git
 
-#### Clone the repository
+#### Clone o repositório
 
 ```bash
 git clone https://github.com/zVilanova/WebApi8.git
@@ -101,17 +101,17 @@ git clone https://github.com/zVilanova/WebApi8.git
 cd WebApi8
 ```
 
-#### Configure the connection string
+#### Configure a connection string
 
-Edit `appsettings.json` and set the `DefaultConnection` string to point to your SQL Server instance.
+Edite o `appsettings.json` e defina a string `DefaultConnection` apontando para a sua instância do SQL Server.
 
-#### Apply the migrations
+#### Aplique as migrations
 
 ```bash
 dotnet ef database update
 ```
 
-#### Run the application
+#### Execute a aplicação
 
 ```bash
 dotnet run
